@@ -1,4 +1,4 @@
-###Bitbucket API 
+### Bitbucket API 
 
 wrapper python code for using bitbucket api in easy way !
 
@@ -10,4 +10,4 @@ the code supports creating a repository inside a workspace,
  https://developer.atlassian.com/cloud/bitbucket/rest/intro/#authentication
  on the Authorization Code Grant (4.1) Section
 
- also if you have the access token and the refresh token already, then you could use the system directly by specifying them. 
+ - also if you have the access token and the refresh token already, then you could use the system directly by specifying them. 
