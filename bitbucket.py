@@ -55,6 +55,22 @@ class BitbucketApi:
             return {"error": "you are not authenticated or not authorized."}
         return response.json()
 
+    def get_all_commits_in_repository(self, workspace: str, repository_slug: str, commit_hash: str):
+        url = f'{self.end_point}/repositories/{workspace}/{repository_slug}/commit/{commit_hash}'
+        authorization_token = f'Bearer <{self.access_token}>'
+        response = requests.get(url, 
+                                 headers={'Authorization': authorization_token})
+        if response.status_code == 401:
+            return {"error": "you are not authenticated or not authorized."}
+        return response
+
+    def delete_repo_in_workspace(self, workspace: str, repository_slug: str):
+        
+        url = f"{self.end_point}/repositories/{workspace}/{repository_slug}"
+        authorization_token = f'Bearer <{self.access_token}>'
+        response = requests.delete(url, headers={'Authorization': authorization_token})
+        return response
+    
     def get_all_repos_from_workspace(self, workspace: str):
         """
 
